@@ -1,6 +1,7 @@
 var x = 0;
 var y = 0;
-
+var enemyx = 0;
+var enemyy = 0;
 var playerx = 200;
 var playery = 400;
 var speed = 0;
@@ -8,7 +9,7 @@ var score = 0;
 var direction = "";
 var lives = 4;
 // Enemies our player must avoid
-var Enemy = function(x, y, speed) {
+var Enemy = function(enemyx, enemyy, speed) {
     // Variables applied to each of our instances go here,
     
     // we've provided one for you to get started
@@ -22,8 +23,8 @@ var Enemy = function(x, y, speed) {
         this.sprite = 'images/enemy-bug.png';
     }; 
     this.direction = direction;
-    this.x = x;
-    this.y = y;
+    this.x = enemyx;
+    this.y = enemyy;
     this.speed = speed;
 };
 
@@ -118,7 +119,7 @@ Player.handleInput = function(key) {
     if (playery >= 400) {
         playery = 400;
     }
-    if (playery< 0) {
+    if (playery == -5) {
         playery = 400;
         playerx = 200;
         score = score + 50;
