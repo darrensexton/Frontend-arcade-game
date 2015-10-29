@@ -6,6 +6,7 @@ var playery = 400;
 var speed = 0;
 var score = 0;
 var direction = "";
+var lives = 4;
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
@@ -57,9 +58,12 @@ Score.prototype.render = function() {
     ctx.textAlign = 'center';
     ctx.font = '15pt comic sans MS';
     ctx.fillRect(420, 550, 70, 30);
+    ctx.fillRect(115, 550 ,70, 30);
     ctx.fillStyle = 'black';
     ctx.fillText(score, 450, 572);
     ctx.fillText('SCORE', 350, 572);
+    ctx.fillText(lives, 145, 572);
+    ctx.fillText('LIVES', 45, 572);
 };
 
 var scor = new Score;
@@ -118,7 +122,6 @@ Player.handleInput = function(key) {
         playery = 400;
         playerx = 200;
         score = score + 50;
-        setTimeout(alert('Good Job, Keep Going'), 5000);
     console.log(playerx, playery);    
     }
   
@@ -136,7 +139,7 @@ var player = new Player;
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-var allEnemies = [new Enemy(-100, 76, 300), new Enemy(500, 152, 170), new Enemy(-100, 228, 350), new Enemy(500, 304, 250)];
+var allEnemies = [new Enemy(-100, 76, 300), new Enemy(500, 152, 170), new Enemy(-100, 228, 350), new Enemy(500, 304, 250), new Enemy(-400, 228, 350)];
 // Place the player object in a variable called player
 
 
