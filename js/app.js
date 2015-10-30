@@ -1,15 +1,15 @@
 var x = 0;
 var y = 0;
-var enemyx = 0;
-var enemyy = 0;
+
 var playerx = 200;
 var playery = 400;
 var speed = 0;
 var score = 0;
 var direction = "";
 var lives = 4;
+
 // Enemies our player must avoid
-var Enemy = function(enemyx, enemyy, speed) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     
     // we've provided one for you to get started
@@ -23,9 +23,10 @@ var Enemy = function(enemyx, enemyy, speed) {
         this.sprite = 'images/enemy-bug.png';
     }; 
     this.direction = direction;
-    this.x = enemyx;
-    this.y = enemyy;
+    this.x = x;
+    this.y = y;
     this.speed = speed;
+    
 };
 
 // Update the enemy's position, required method for game
@@ -92,6 +93,20 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     
 };
+
+function checkCollisions() {
+  var px = playerx;
+  var py = playery;
+   
+    for (var i=0; 1 < 5; i++) {
+        if ((px + 67) >= (allEnemies[i].x) &&
+            (px) <= (allEnemies[i].x + 101) &&
+            (py + 77) >= (allEnemies[i].y) &&
+            (py) <= (allEnemies[i].y + 28))   
+            playerx = 200;
+            playery = 400;
+        };
+   };
 
 
 
