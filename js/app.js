@@ -95,19 +95,23 @@ Player.prototype.render = function() {
 };
 
 function checkCollisions() {
-  var px = playerx;
+ var px = playerx;
   var py = playery;
    
-    for (var i=0; 1 < 5; i++) {
+   for (var i=0; i < allEnemies.length; i++) {
         if ((px + 67) >= (allEnemies[i].x) &&
             (px) <= (allEnemies[i].x + 101) &&
-            (py + 77) >= (allEnemies[i].y) &&
+            (py + 50) >= (allEnemies[i].y) &&
             (py) <= (allEnemies[i].y + 28))   
-            playerx = 200;
-            playery = 400;
-        };
-   };
+            {playerhome();
+            lives = lives-1;}
+       };
+  };
 
+function playerhome() {
+    playerx = 200;
+    playery = 400;
+}
 
 
 // Player Movement
@@ -135,8 +139,7 @@ Player.handleInput = function(key) {
         playery = 400;
     }
     if (playery == -5) {
-        playery = 400;
-        playerx = 200;
+        playerhome();
         score = score + 50;
     console.log(playerx, playery);    
     }
@@ -153,9 +156,10 @@ var player = new Player;
 // a handleInput() method.
 
 
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-var allEnemies = [new Enemy(-100, 76, 300), new Enemy(500, 152, 170), new Enemy(-100, 228, 350), new Enemy(500, 304, 250), new Enemy(-400, 228, 350)];
+var allEnemies = [new Enemy(-100, 76, 300), new Enemy(500, 152, 170),  new Enemy(500, 304, 250), new Enemy(-100, 228, 275), new Enemy(-450, 228, 275)];
 // Place the player object in a variable called player
 
 
