@@ -3,6 +3,8 @@ frontend-nanodegree-arcade-game
 
 Welcome to my Game.
 
+To play game, click on index.html
+
 Use the arrow keys to move.
 
 Avoid the bugs and collect the diamonds.
