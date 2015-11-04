@@ -11,7 +11,7 @@ Avoid the bugs and collect the diamonds.
 
 Each diamond is worth 50 points.
 
-Reaching the water is woth 100 points.
+Reaching the water is worth 100 points.
 
 You have four lives.
 
